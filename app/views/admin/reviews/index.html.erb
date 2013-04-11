@@ -4,29 +4,31 @@
   <div class="description">
   </div>
 
-  <div class='index_header clear_fix'>
+  <div class='index_header without_line'>
     <span class='title'>List of reviews</span>
     (<%= link_to 'add a new review', new_admin_review_path %>)
     
     <span class="right"><%= will_paginate(@reviews)%></span>
   </div>
 
+  <table class="index">
   <% if @reviews.empty? %>
-    Please add a new review
+    <tr>
+      <td>Please add a new review</td>
+    </tr>
   <% else %>
-    <table class="index">
-      <tr>
-        <th>Title</th>
-        <th class="actions">Actions</th>
-      </tr>
+    <tr>
+      <th>Title</th>
+      <th class="actions">Actions</th>
+    </tr>
     <% @reviews.each do |review| %>
-      <tr class="data">
-        <td><%= review.title %></td>
-        <td class="actions">
-          <%= link_to 'View & Edit', [:admin, review] %>
-          <%= link_to 'Delete', [:admin, review], :confirm => 'Are you sure?', :method => :delete %>
-        </td>
-      </tr>
+    <tr class="data">
+      <td><%= review.title %></td>
+      <td class="actions">
+        <%= link_to 'View & Edit', [:admin, review] %>
+        <%= link_to 'Delete', [:admin, review], :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+    </tr>
     <% end %>
   <% end %>
   </table>
