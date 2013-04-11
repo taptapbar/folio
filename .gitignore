@@ -7,3 +7,5 @@ public/system/**/*
 public/system/*
 */**/.DS_Store
 .rvmrc
+.DS_Store
+data/

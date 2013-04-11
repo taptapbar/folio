@@ -1,0 +1,33 @@
+<% title "Reviews", false %>
+
+<div class="index_container">
+  <div class="description">
+  </div>
+
+  <div class='index_header clear_fix'>
+    <span class='title'>List of reviews</span>
+    (<%= link_to 'add a new review', new_admin_review_path %>)
+    
+    <span class="right"><%= will_paginate(@reviews)%></span>
+  </div>
+
+  <% if @reviews.empty? %>
+    Please add a new review
+  <% else %>
+    <table class="index">
+      <tr>
+        <th>Title</th>
+        <th class="actions">Actions</th>
+      </tr>
+    <% @reviews.each do |review| %>
+      <tr class="data">
+        <td><%= review.title %></td>
+        <td class="actions">
+          <%= link_to 'View & Edit', [:admin, review] %>
+          <%= link_to 'Delete', [:admin, review], :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+  </table>
+</div>

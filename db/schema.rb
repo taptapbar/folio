@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110129235851) do
+ActiveRecord::Schema.define(:version => 20130411072657) do
 
   create_table "albums", :force => true do |t|
     t.string   "album_cover_title",        :default => ""
@@ -82,6 +83,18 @@ ActiveRecord::Schema.define(:version => 20110129235851) do
   end
 
   add_index "photos", ["imageable_id", "imageable_type"], :name => "index_photos_on_imageable_id_and_imageable_type"
+
+  create_table "reviews", :force => true do |t|
+    t.date     "date"
+    t.string   "title"
+    t.text     "description"
+    t.string   "pdf_file_name"
+    t.string   "pdf_content_type"
+    t.integer  "pdf_file_size"
+    t.datetime "pdf_updated_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "slugs", :force => true do |t|
     t.string   "name"
