@@ -13,7 +13,7 @@ class Sidebar < ActiveRecord::Base
   def self.one(link_to_name)
     return nil if link_to_name.blank?
     unless sidebar = Sidebar.find_by_link_to(link_to_name)
-      sidebar = Sidebar.create(:link_to => link_to_name)
+      sidebar = Sidebar.create(:link_to => link_to_name, :description => "")
     end
     return sidebar
   end

@@ -473,13 +473,9 @@ a.last_film {
 /* Pages
 --------------------- */
 #page_container {
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: "Sintony", helvetica, serif;
   color: #666;
-  background-color: #f2f2f2;
-  padding: 50px 0 50px 65px;
-  min-height: 350px;
-  height: auto !important;
-  height: 350px;
+  padding: 0 0 50px 0;
   margin-top: 198px;
 }
   #bio_page {
@@ -496,6 +492,45 @@ a.last_film {
   height: auto !important;
   height: 350px;
 }
+
+.content_container {
+  float: left;
+  width: 654px;
+  min-height: 400px;
+  height: auto !important;
+  height: 400px;
+  background-color: #fff;
+}
+  .content_container .inner {
+    margin: 0 0 0 66px;
+    width: 534px;
+  }
+  .content_container .selectors {
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  .content_container .selector {
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 0 0 5px;
+    cursor: pointer;
+  }
+  .content_container .content {
+    margin: 20px 0 0;
+    padding: 0 0 0 6px;
+  }
+
+.sidebar_container {
+  float: right;
+  width: 306px;
+}
+  .sidebar_container .description {
+    margin: 5px 0 0;
+    padding: 5px 6px;
+    border-top: 2px solid #000;
+    border-bottom: 1px solid #aaa;
+  }
 
 /* Form
 --------------------- */

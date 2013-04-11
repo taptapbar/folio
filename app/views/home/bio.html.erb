@@ -1,0 +1,21 @@
+<% content_for :title do %>
+  - Biography
+<% end %>
+
+<div id="page_container" class="clear_fix">
+  <div class="content_container">
+    <div class="inner">
+      <div class="selectors">
+        <div class="selector">E</div>
+        <div class="selector">中</div>
+      </div>
+      
+      <div class="content">
+        <div class="engligh hidden"><%= @bio_engligh.content.html_safe %></div>
+        <div class="chinese"><%= @bio_chinese.content.html_safe %></div>
+      </div>
+    </div>
+  </div>
+  
+  <%= render :partial => 'sidebar', :locals => { :sidebar => @sidebar } %>
+</div>

@@ -1,0 +1,10 @@
+<div class="sidebar_container">
+  <div class="image">
+    <%= image_tag @sidebar.image.url(:large) %>
+  </div>
+  
+  <div class="description">
+    <%= @sidebar.description.html_safe %>
+  </div>
+  
+</div>
