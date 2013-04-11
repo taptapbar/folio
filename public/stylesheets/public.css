@@ -3,14 +3,14 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, sans-serif;
+  font-family: "Sintony", Helvetica, sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-size: 12px;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, sans-serif;
+  font-family: "Sintony", Helvetica, sans-serif;
   color: #666;
   background-color: #e6e6e6;
 }
@@ -52,26 +52,33 @@ p {
 a img {
   border: none;
 }
+
+#container {
+  margin: 0 auto;
+  width: 1002px;
+}
+
 /* Header
  *
  *
  */
  
 #header_wrap {
-  text-align: center;
-  margin: 10px 0 0;
+  position: fixed;
+  top: 50px;
+  width: 1002px;
+  background-color: #fff;
 }
   #header {
     text-align: left;
-    margin: 20px auto 20px;
+    margin: 0 auto;
     position: relative;
-    width: 800px;
-    height: 20px;
+    height: 48px;
   }
     #logo {
       position: absolute;
       top: 0px;
-      left: 0px;
+      left: 10px;
       font-size: 20px;
       font-weight: normal;
     }
@@ -111,11 +118,11 @@ a img {
 }
   #navigation {
     text-align: left;
-    margin: 0 auto 20px;
-    padding: 0 0 0px 0;
-    width: 800px;
+    margin: 0 auto;
+    padding: 0;
     height: 26px;
     line-height: 26px;
+    float: right;
   }
     #navigation ul {
       list-style: none;
@@ -131,19 +138,22 @@ a img {
           margin: 0;
         }
         #navigation li a {
-          padding: 0;
+          padding: 10px 6px 13px;
           margin: 0 30px 0 0;
-          font-size: 15px;
+          font-size: 17px;
           display: block;
           text-decoration: none;
           color: #666;
-          background: url(/images/sprite.png) no-repeat top left;
         }
           #navigation li a.selected {
-            color: #29ABE2;
+            margin-top: -3px;
+            border-top: 3px solid #000;
+            border-bottom: 1px solid #aaa;
           }
         #navigation li a:hover {
-          color: #29ABE2;
+          margin-top: -3px;
+          border-top: 3px solid #000;
+          border-bottom: 1px solid #aaa;
         }
         #navigation li:hover ul{
           display: block;
@@ -171,36 +181,15 @@ a img {
           #navigation li ul li a:hover {
             color: #fff;
           }
-          
-#navigation #menu-articles a { background-position: 0 -264px; width: 33px; height: 23px; }
-#navigation #menu-films a { background-position: 0 -144px; width: 32px; height: 23px; }
-#navigation #menu-albums a { background-position: 0 -312px; width: 76px; height: 23px; }
-#navigation #menu-bio a { background-position: 0 0; width: 19px; height: 23px; }
-#navigation #menu-cv a { background-position: 0 -96px; width: 22px; height: 23px; }
-#navigation #menu-contact a { background-position: 0 -48px; width: 45px; height: 23px; }
-
-#navigation #menu-articles a:hover { background-position: 0 -288px; width: 33px; height: 23px; }
-#navigation #menu-films a:hover { background-position: 0 -168px; width: 32px; height: 23px; }
-#navigation #menu-albums a:hover { background-position: 0 -336px; width: 76px; height: 23px; }
-#navigation #menu-bio a:hover { background-position: 0 -24px; width: 19px; height: 23px; }
-#navigation #menu-cv a:hover { background-position: 0 -120px; width: 22px; height: 23px; }
-#navigation #menu-contact a:hover { background-position: 0 -72px; width: 45px; height: 23px; }
-
-#navigation #menu-articles a.selected { background-position: 0 -288px; width: 33px; height: 23px; }
-#navigation #menu-films a.selected { background-position: 0 -168px; width: 32px; height: 23px; }
-#navigation #menu-albums a.selected { background-position: 0 -336px; width: 76px; height: 23px; }
-#navigation #menu-bio a.selected { background-position: 0 -24px; width: 19px; height: 23px; }
-#navigation #menu-cv a.selected { background-position: 0 -120px; width: 22px; height: 23px; }
-#navigation #menu-contact a.selected { background-position: 0 -72px; width: 45px; height: 23px; }
     
 #main_wrap {
   text-align: center;
-  margin: 10px 0 0;
+  margin: 0px 0 0;
 }
   #main_wrap div#main {
     text-align: left;
     margin: 0 auto;
-    width: 800px;
+    width: 1002px;
     min-height: 450px;
     height: auto !important;
     height: 450px;
