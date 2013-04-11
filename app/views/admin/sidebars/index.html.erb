@@ -1,0 +1,31 @@
+<% title "Sidebars", false %>
+
+<div class="index_container">
+  <div class="description">
+  </div>
+
+  <div class='index_header without_line'>
+    <span class='title'>List of sidebars</span>
+  </div>
+
+  <table class="index">
+  <% if @sidebars.empty? %>
+    <tr>
+      <td>Please add a new sidebar</td>
+    </tr>
+  <% else %>
+    <tr>
+      <th>Title</th>
+      <th class="actions">Actions</th>
+    </tr>
+    <% @sidebars.each do |sidebar| %>
+    <tr class="data">
+      <td><%= sidebar.link_to %></td>
+      <td class="actions">
+        <%= link_to 'View & Edit', [:admin, sidebar] %>
+      </td>
+    </tr>
+    <% end %>
+  <% end %>
+  </table>
+</div>

@@ -1,0 +1,30 @@
+<div id="show_wrapper">
+  <div class="nav_links clear_fix">
+    <div class="left"><%= link_to 'Back to List', admin_sidebars_path %></div>
+    <div class="right">
+      <%= link_to 'Edit', edit_admin_sidebar_path(@sidebar) %>
+    </div>
+  </div>
+
+  <div class="show_container">
+    <div class="row">
+      <div class="label">Title</div>
+      <div class="data"><%= @sidebar.link_to %></div>
+    </div>
+    <div class="row">
+      <div class="label">Description</div>
+      <div class="data"><%= @sidebar.description %></div>
+    </div>
+    <div class="row">
+      <div class="label">Image</div>
+      <div class="data">
+        <% if @sidebar.image.exists? -%>
+          <div><%= image_tag @sidebar.image.url(:large) %></div>
+        <% else -%>
+          No file exists.
+        <% end -%>
+      </div>
+    </div>
+  </div>
+
+</div>

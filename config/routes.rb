@@ -53,6 +53,7 @@ Portfolio::Application.routes.draw do
     resources :videos
     
     resources :reviews
+    resources :sidebars
   end
   
   # The priority is based upon order of creation:
