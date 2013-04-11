@@ -85,8 +85,6 @@ a img {
       #logo a {
         color: #666;
         text-decoration: none;
-        background: url(/images/sprite.png) no-repeat top left;
-        background-position: 0 -192px; width: 132px; height: 35px;
         display: block;
       }
       #logo a:hover {
