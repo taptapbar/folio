@@ -1,11 +1,7 @@
 Portfolio::Application.routes.draw do
   root :to => 'home#index'
-  
-  resources :articles
-  resources :films
-  resources :albums
-  resources :pages, :controller => 'pages', :only => :show
 
+  match '/work',             :to => 'home#work'
   match '/bio',              :to => 'home#bio'
   match '/review',           :to => 'home#review'
   match '/news_and_contact', :to => 'home#news_and_contact'
@@ -13,6 +9,11 @@ Portfolio::Application.routes.draw do
   match '/admin', :to => 'admin/home#index'
   match '/admin/login', :to => 'admin/user_sessions#new'
   match '/admin/logout', :to => 'admin/user_sessions#destroy'
+  
+  #resources :articles
+  #resources :films
+  #resources :albums
+  #resources :pages, :controller => 'pages', :only => :show
   
   namespace :admin do
     resource :user_session

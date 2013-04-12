@@ -8,7 +8,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :pages, 'Pages', admin_pages_path, :highlights_on => /admin\/pages/, :if => Proc.new { in_admin? }
 
     primary.item :home, "HOME".html_safe, root_path, :if => Proc.new { !in_admin? }
-    primary.item :articles, "WORK".html_safe, articles_path, :if => Proc.new { !in_admin? }
+    primary.item :work, "WORK".html_safe, work_path, :if => Proc.new { !in_admin? }
     primary.item :bio, "BIOGRAPHY".html_safe, bio_path, :if => Proc.new { !in_admin? }
     primary.item :review, "REVIEW".html_safe, review_path, :if => Proc.new { !in_admin? }
     primary.item :news_and_contact, "NEWS / CONTACT".html_safe, news_and_contact_path, :if => Proc.new { !in_admin? }
