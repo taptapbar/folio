@@ -22,6 +22,7 @@ gem 'state_machine'
 gem 'hpricot'
 gem 'jwplayer-rails'
 gem 'dynamic_form', '~> 1.1.4'
+gem 'sass'
 
 group :development, :test, :cucumber do
   gem 'debugger'

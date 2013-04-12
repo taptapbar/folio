@@ -41,6 +41,9 @@ module Portfolio
     
     config.autoload_paths += %W(#{config.root}/lib/extra)
     
+    # Enable the asset pipeline
+    config.assets.enabled = true
+    
     Paperclip::Railtie.insert
   end
 end
