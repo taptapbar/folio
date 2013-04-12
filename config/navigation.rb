@@ -2,6 +2,7 @@ SimpleNavigation::Configuration.run do |navigation|
   navigation.id_generator = Proc.new {|key| "menu-#{key}"}
   navigation.items do |primary|
     primary.item :home, 'Dashboard', admin_path, :if => Proc.new { in_admin? }    
+    primary.item :works, 'Works', admin_works_path, :hilights_on => /admin\/works/, :if => Proc.new { in_admin? }
     primary.item :reviews, 'Reviews', admin_reviews_path, :highlights_on => /admin\/reviews/, :if => Proc.new { in_admin? }
     primary.item :sidebars, 'Sidebars', admin_sidebars_path, :highlights_on => /admin\/sidebars/, :if => Proc.new { in_admin? }
     primary.item :articles, 'News', admin_articles_path, :highlights_on => /admin\/articles/, :if => Proc.new { in_admin? }

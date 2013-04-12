@@ -54,6 +54,7 @@ Portfolio::Application.routes.draw do
     
     resources :reviews
     resources :sidebars
+    resources :works
   end
   
   # The priority is based upon order of creation:
