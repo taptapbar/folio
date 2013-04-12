@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
   
   def review
+    @reviews = Review.all.paginate(:per_page => 6, :page => params[:page])
     @sidebar = Sidebar.one('Review')
   end
   
@@ -14,8 +15,9 @@ class HomeController < ApplicationController
   end
   
   def news_and_contact
-    @contact = Page.page('contact')
-    @sidebar = Sidebar.one('News / Contact')
+    @articles = Article.all.paginate(:per_page => 6, :page => params[:page])
+    @contact  = Page.page('contact')
+    @sidebar  = Sidebar.one('News / Contact')
   end
   
   def contact

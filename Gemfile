@@ -23,6 +23,7 @@ gem 'hpricot'
 gem 'jwplayer-rails'
 gem 'dynamic_form', '~> 1.1.4'
 gem 'sass'
+gem 'jquery-rails'
 
 group :development, :test, :cucumber do
   gem 'debugger'
