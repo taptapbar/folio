@@ -17,3 +17,4 @@ jQuery(function($) {
       $(this).fadeOut();
   });
 });
+

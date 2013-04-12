@@ -6,13 +6,13 @@
   <div class="content_container">
     <div class="inner">
       <div class="selectors">
-        <div class="selector">E</div>
-        <div class="selector">中</div>
+        <div class="selector" data-lang="english">E</div>
+        <div class="selector selected" data-lang="chinese">中</div>
       </div>
       
       <div class="content">
-        <div class="engligh hidden"><%= @bio_engligh.content.html_safe %></div>
-        <div class="chinese"><%= @bio_chinese.content.html_safe %></div>
+        <div class="english hidden bio_text"><%= @bio_engligh.content.html_safe %></div>
+        <div class="chinese bio_text"><%= @bio_chinese.content.html_safe %></div>
       </div>
     </div>
   </div>
