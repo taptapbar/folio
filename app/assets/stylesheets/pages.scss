@@ -5,6 +5,10 @@
   height: auto !important;
   height: 400px;
   background-color: #fff;
+  .inner {
+    margin: 0 0 0 66px;
+    width: 534px;
+  }
   
   h2 {
     font-size: 19px;
@@ -13,10 +17,11 @@
     margin: 0 0 30px 0;
   }
   
-  .inner {
-    margin: 0 0 0 66px;
-    width: 534px;
+  .explanation {
+    text-align: right;
+    margin: -20px 0 30px;
   }
+
   .selectors {
     text-align: right;
     border-bottom: 1px solid #ddd;
@@ -62,6 +67,24 @@
     font-size: 13px;
     padding: 0;
     margin: 10px 0 0;
+  }
+}
+
+.reviews {
+  margin: 0 0 0 30px;
+  
+  .review {
+    border-left: 2px solid #000;
+    padding: 0 0 0 10px;
+    margin: 0 0 20px 0;
+    
+    .title {
+      font-size: 17px;
+      margin: 0 0 10px 0;
+    }
+    .description {
+      font-size: 13px;
+    }
   }
 }
 
