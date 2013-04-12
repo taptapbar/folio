@@ -1,0 +1,25 @@
+<% content_for :title do %>
+  - Review
+<% end %>
+
+<div id="page_container" class="clear_fix">
+  <div class="content_container">
+    <div class="inner">
+      <section id="reviews_container">
+        <h2>評論文集檔案 REVIEWS in PDF</h2>
+        <div class="reviews">
+          <div class="review">
+            <div class="title">評論文章編號二</div>
+            <div class="description">蕭瓊瑞 (成功大學歷史系教授)</div>
+          </div>
+          <div class="review">
+            <div class="title">評論文章編號三</div>
+            <div class="description">蕭瓊瑞 (成功大學歷史系教授)</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  
+  <%= render :partial => 'sidebar', :locals => { :sidebar => @sidebar } %>
+</div>

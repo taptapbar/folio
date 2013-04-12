@@ -7,6 +7,7 @@ Portfolio::Application.routes.draw do
   resources :pages, :controller => 'pages', :only => :show
 
   match '/bio',              :to => 'home#bio'
+  match '/review',           :to => 'home#review'
   match '/news_and_contact', :to => 'home#news_and_contact'
   
   match '/admin', :to => 'admin/home#index'
