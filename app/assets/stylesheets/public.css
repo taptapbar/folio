@@ -296,29 +296,6 @@ a img {
   margin: 0;
   padding: 5px 10px;
 }
-
-#articles_container {
-  background-color: #f2f2f2;
-  padding: 20px 90px 20px 65px;
-  min-height: 200px;
-  height: auto !important;
-  height: 200px;
-}
-
-.article {
-  margin: 0 30px 30px 0;
-  color: #666;
-}
-  .article * {
-    font-size: 12px;
-  }
-  .article .date {
-    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, sans-serif;
-    margin: 0 0 5px 0;
-  }
-  .article p {
-    margin: 0 0 10px 0;
-  }
  
 /* Films
 --------------------- */
@@ -483,53 +460,6 @@ a.last_film {
   }
   #cv_page {
     width: 500px;
-  }
-  
-#contact_container {
-  background-color: #f2f2f2;
-  padding: 50px 0 50px 30px;
-  min-height: 350px;
-  height: auto !important;
-  height: 350px;
-}
-
-.content_container {
-  float: left;
-  width: 654px;
-  min-height: 400px;
-  height: auto !important;
-  height: 400px;
-  background-color: #fff;
-}
-  .content_container .inner {
-    margin: 0 0 0 66px;
-    width: 534px;
-  }
-  .content_container .selectors {
-    text-align: right;
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-  }
-  .content_container .selector {
-    display: inline-block;
-    font-size: 16px;
-    margin: 0 0 0 5px;
-    cursor: pointer;
-  }
-  .content_container .content {
-    margin: 20px 0 0;
-    padding: 0 0 0 6px;
-  }
-
-.sidebar_container {
-  float: right;
-  width: 306px;
-}
-  .sidebar_container .description {
-    margin: 5px 0 0;
-    padding: 5px 6px;
-    border-top: 2px solid #000;
-    border-bottom: 1px solid #aaa;
   }
 
 /* Form

@@ -16,7 +16,8 @@ class HomeController < ApplicationController
   end
   
   def news_and_contact
-    
+    @contact = Page.page('contact')
+    @sidebar = Sidebar.one('News / Contact')
   end
 
 end

@@ -2,5 +2,27 @@
   - News / Contact
 <% end %>
 
-<div id="page_container">
+<div id="page_container" class="clear_fix">
+  <div class="content_container">
+    <div class="inner">
+      <section id="articles_container">
+        <h2>訊息 NEWS</h2>
+        <div class="articles">
+          <div class="article">
+            <div class="date">6.28.2013</div>
+            <div class="content">李重重老師</div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="contact_container">
+        <h2>聯絡方式 CONTACTS</h2>
+        <div class="content">
+          <%= @contact.content.html_safe %>
+        </div>
+      </section>
+    </div>
+  </div>
+  
+  <%= render :partial => 'sidebar', :locals => { :sidebar => @sidebar } %>
 </div>
