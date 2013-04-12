@@ -15,6 +15,8 @@
 //= require jquery-ui
 //= require jquery.orbit
 //= require jquery.jtruncate
+//= require jquery.infinitescroll
 //= require rails
 //= require app
+//= require home
 //= require pages

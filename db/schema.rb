@@ -31,11 +31,11 @@ ActiveRecord::Schema.define(:version => 20130412080418) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
-    t.text     "content"
+    t.text     "content",    :limit => 16777215
     t.date     "date"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
-    t.string   "state",      :default => "hidden"
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
+    t.string   "state",                          :default => "hidden"
   end
 
   create_table "films", :force => true do |t|
@@ -63,9 +63,9 @@ ActiveRecord::Schema.define(:version => 20130412080418) do
     t.string   "parent_name"
     t.string   "unique_name"
     t.string   "title"
-    t.text     "content"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.text     "content",     :limit => 16777215
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "photos", :force => true do |t|
@@ -87,24 +87,24 @@ ActiveRecord::Schema.define(:version => 20130412080418) do
   create_table "reviews", :force => true do |t|
     t.date     "date"
     t.string   "title"
-    t.text     "description"
+    t.text     "description",      :limit => 16777215
     t.string   "pdf_file_name"
     t.string   "pdf_content_type"
     t.integer  "pdf_file_size"
     t.datetime "pdf_updated_at"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   create_table "sidebars", :force => true do |t|
     t.string   "link_to"
-    t.text     "description"
+    t.text     "description",        :limit => 16777215
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
   create_table "slugs", :force => true do |t|

@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    
+    @works = Work.all.paginate(:per_page => 3, :page => params[:page])
   end
   
   def work

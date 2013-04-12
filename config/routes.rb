@@ -10,6 +10,7 @@ Portfolio::Application.routes.draw do
   match '/admin/login', :to => 'admin/user_sessions#new'
   match '/admin/logout', :to => 'admin/user_sessions#destroy'
   
+  resources :works
   #resources :articles
   #resources :films
   #resources :albums
