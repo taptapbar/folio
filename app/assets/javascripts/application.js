@@ -17,3 +17,4 @@
 //= require jquery.jtruncate
 //= require rails
 //= require app
+//= require pages

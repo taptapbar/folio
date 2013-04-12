@@ -1,6 +1,10 @@
 class HomeController < ApplicationController
   def index
-    @films = Film.published
+    
+  end
+  
+  def work
+    
   end
   
   def review
@@ -18,6 +22,10 @@ class HomeController < ApplicationController
     @articles = Article.all.paginate(:per_page => 6, :page => params[:page])
     @contact  = Page.page('contact')
     @sidebar  = Sidebar.one('News / Contact')
+  end
+  
+  def slideshow
+    @films = Film.published
   end
   
   def contact
