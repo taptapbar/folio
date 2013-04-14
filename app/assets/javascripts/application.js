@@ -16,7 +16,9 @@
 //= require jquery.orbit
 //= require jquery.jtruncate
 //= require jquery.infinitescroll
-//= require rails
+//= require jquery.imagesloaded
+//= require jquery.masonry
 //= require app
 //= require home
+//= require works
 //= require pages

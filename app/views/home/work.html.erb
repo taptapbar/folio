@@ -1,0 +1,7 @@
+<div id="works_container">
+  <div class="work_items">
+    <% @works.each do |work| %>
+      <div class="work_item"><%= image_tag work.image.url(:thumb) %></div>
+    <% end %>
+  </div>
+</div>
