@@ -32,9 +32,25 @@
     font-size: 16px;
     margin: 0 0 0 5px;
     cursor: pointer;
+    width: 27px;
+    height: 27px;
+    text-indent: 1000px;
+    background: url(/images/sprite.png) no-repeat;
     
-    &.selected {
-      color: #000;
+    &.english_selector {
+      background-position: 0px -95px;
+      
+      &.selected {
+        background-position: 0px -133px;
+      }
+    }
+    
+    &.chinese_selector {
+      background-position: -35px -95px;
+      
+      &.selected {
+        background-position: -35px -133px;
+      }
     }
   }
   .content {
