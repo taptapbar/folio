@@ -25,6 +25,8 @@ gem 'dynamic_form', '~> 1.1.4'
 gem 'sass'
 gem 'jquery-rails'
 
+gem 'capistrano-rbenv'
+
 group :development, :test, :cucumber do
   gem 'debugger'
 end
