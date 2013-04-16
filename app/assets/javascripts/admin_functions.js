@@ -44,7 +44,7 @@ $(document).ready(function() {
     $(".tipsy").hide();
   });
   
-  $('.inline_edit_textarea textarea').live('keydown', function(){
+  $(document).on('keydown', '.inline_edit_textarea textarea', function(){
     //var textarea = $(this).find('textarea');
     var textarea = $(this);
     if(!textarea.hasClass('isAutogrow')) {

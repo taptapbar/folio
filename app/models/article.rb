@@ -5,6 +5,9 @@ class Article < ActiveRecord::Base
   
   default_scope :order => "date DESC, updated_at DESC"
   
+  validates :title,   :presence => true
+  validates :content, :presence => true
+  
   before_update :sanitize_html
   
   def sanitize_html

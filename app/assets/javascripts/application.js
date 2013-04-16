@@ -12,7 +12,8 @@
 //
 //= require swfobject
 //= require jquery
-//= require jquery-ui
+//= require jquery_ujs
+//= require jquery.ui.all
 //= require jquery.orbit
 //= require jquery.jtruncate
 //= require jquery.infinitescroll

@@ -8,10 +8,12 @@
       <section id="articles_container">
         <h2>訊息 NEWS</h2>
         <div class="articles">
+          <% @articles.each do |article| %>
           <div class="article">
-            <div class="date">6.28.2013</div>
-            <div class="content">李重重老師</div>
+            <div class="date"><%= article.date.strftime("%-m.%-d.%Y") %></div>
+            <div class="content"><%= article.content.html_safe %></div>
           </div>
+          <% end %>
         </div>
       </section>
       

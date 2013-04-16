@@ -24,6 +24,7 @@ gem 'jwplayer-rails'
 gem 'dynamic_form', '~> 1.1.4'
 gem 'sass'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 gem 'capistrano-rbenv'
 

@@ -12,12 +12,14 @@
 //
 //= require swfobject
 //= require jquery
-//= require jquery-ui
+//= require jquery_ujs
+//= require jquery.ui.all
+//= require jquery.browser
+//= require jquery.cleditor
 //= require jquery.jeditable
 //= require jquery.tipsy
 //= require jquery.prettyPhoto
 //= require jquery.Jcrop
 //= require jquery.autogrow-textarea
-//= require rails
 //= require album
 //= require admin_functions
