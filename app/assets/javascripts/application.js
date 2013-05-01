@@ -19,6 +19,7 @@
 //= require jquery.infinitescroll
 //= require jquery.imagesloaded
 //= require jquery.masonry
+//= require jquery.viewport
 //= require app
 //= require home
 //= require works

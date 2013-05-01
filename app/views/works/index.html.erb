@@ -1,6 +1,8 @@
 <ul id="works">
   <% @works.each do |work| %>
-    <li><%= image_tag work.image.url(:large) %></li>
+  <li><%= image_tag work.image.url(:large), "data-thumb" => work.image.url(:thumb),
+                                            "data-work-id" => work.id,
+                                            :id => "work_#{work.id}" %></li>
   <% end %>
 </ul>
 

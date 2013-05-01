@@ -1,11 +1,21 @@
 <ul id="works">
   <% @works.each do |work| %>
-    <li><%= image_tag work.image.url(:large) %></li>
+  <li><%= image_tag work.image.url(:large), "data-thumb" => work.image.url(:thumb),
+                                            "data-work-id" => work.id,
+                                            :id => "work_#{work.id}" %></li>
   <% end %>
 </ul>
 
 <div id="navigator">
-  
+  <div class="prev-work">
+    <%= image_tag '', :class => "hidden", "data-work-id" => '' %>
+  </div>
+  <div class="current-work">
+    <%= image_tag @works.first.image.url(:thumb), "data-work-id" => @works.first.id %>
+  </div>
+  <div class="next-work">
+    <%= image_tag @works.second.image.url(:thumb), "data-work-id" => @works.second.id %>
+  </div>
 </div>
 
 <div class="pagination_container hidden">

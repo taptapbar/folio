@@ -1,3 +1,30 @@
+#navigator {
+  position: fixed;
+  top: 200px;
+  left: 50%;
+  margin: 0 0 0 440px;
+  border-left: 1px solid #ccc;
+  
+  div {
+    padding: 7px;
+    background-color: #f2f2f2;
+    margin: 0 0 2px 0;
+    min-height: 40px;
+    cursor: pointer;
+  }
+  
+  img {
+    width: 46px;
+  }
+  
+  .prev-work img {
+    opacity: 0.5;
+  }
+  .next-work img {
+    opacity: 0.5;
+  }
+}
+
 #works { 
   width: 900px; 
   text-align: center; 
