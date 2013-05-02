@@ -7,4 +7,8 @@ $(function(){
       columnWidth : 168
     });
   });
+  
+  $('.work_item').on('click', function(){
+    PhotoViewer.launch($(this).attr('data-work-id'));
+  });
 });

@@ -1,0 +1,72 @@
+#photo-viewer {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  margin-left: -501px;
+  background-color: #ddd;
+  width: 1002px;
+  height: 80%;
+  
+  .image {
+    float: left;
+    width: 822px;
+    text-align: center;
+    
+    img {
+      max-width: 800px;
+      height: 100%;
+      margin: auto;
+    }
+  }
+  
+  .sidebar {
+    float: right;
+    width: 168px;
+    height: 100%;
+    margin: 0 12px 0 0;
+    background-color: #f2f2f2;
+    overflow: hidden;
+    
+    .button {
+      cursor: pointer;
+      background: url(/images/sprite.png) no-repeat;
+      width: 38px;
+      height: 38px;
+      text-indent: 5000px;
+      display: inline-block;
+    }
+    
+    .close {
+      background-position: -100px 0px;
+      display: block;
+      margin: 10px 0 0 120px;
+      
+      &:hover {
+        background-position: -100px -46px;
+      }
+    }
+    
+    .nav {
+      margin: 20px 10px 0 0;
+      text-align: right;
+    }
+    
+    .prev {
+      background-position: -49px 0px;
+      
+      &:hover {
+        background-position: -49px -46px;
+      }
+    }
+    
+    .next {
+      background-position: 0px 0px;
+      margin: 0 0 0 10px;
+      
+      &:hover {
+        background-position: 0px -46px;
+      }
+    }
+    
+  }
+}

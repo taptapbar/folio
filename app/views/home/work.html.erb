@@ -1,7 +1,10 @@
 <div id="works_container">
   <div class="work_items">
     <% @works.each do |work| %>
-      <div class="work_item"><%= image_tag work.image.url(:thumb) %></div>
+      <div id="work_<%= work.id %>" class="work_item" data-work-id="<%= work.id %>" 
+                                                      data-img-src="<%= work.image.url(:large) %>">
+        <%= image_tag work.image.url(:thumb) %>
+      </div>
     <% end %>
   </div>
 </div>

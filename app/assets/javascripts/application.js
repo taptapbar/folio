@@ -24,3 +24,4 @@
 //= require home
 //= require works
 //= require pages
+//= require photo_viewer
