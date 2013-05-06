@@ -2,8 +2,18 @@
   <div class="work_items">
     <% @works.each do |work| %>
       <div id="work_<%= work.id %>" class="work_item" data-work-id="<%= work.id %>" 
-                                                      data-img-src="<%= work.image.url(:large) %>">
-        <%= image_tag work.image.url(:thumb) %>
+                                                      data-img-src="<%= work.image.url(:large) %>"
+                                                      data-title="<%= work.title.html_safe %>"
+                                                      data-desc="<%= work.description.html_safe %>">
+        <div class="image">
+          <%= image_tag work.image.url(:thumb) %>
+          <div class="hover_cover">
+            <div class="info">
+              <div class="title"><%= work.title.html_safe %></div>
+              <div class="desc"><%= work.description.html_safe %></div>
+            </div>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

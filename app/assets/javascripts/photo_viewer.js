@@ -1,7 +1,10 @@
 (function(){
   function PhotoViewer() {
     this.currentWorkElem = null;
-    this.elemId = "#photo-viewer";
+    this.elemId          = "#photo_viewer";
+    this.wrapperId       = "#photo_viewer_outer";
+    this.prevBtnId       =  this.elemId + " .prev";
+    this.nextBtnId       =  this.elemId + " .next";
   }
   
   PhotoViewer.prototype = {
@@ -28,7 +31,7 @@
     },
     
     close: function() {
-      $(this.elemId).remove();
+      $(this.wrapperId).remove();
     },
     
     next: function() {
@@ -45,19 +48,41 @@
       if (workElem.length === 1) {
         this.currentWorkElem = workElem;
         var imgSrc           = workElem.attr('data-img-src');
+        var title            = workElem.attr('data-title');
+        var desc             = workElem.attr('data-desc');
       
-        $('#photo-viewer img').attr('src', imgSrc);
+        $('#photo_viewer img').attr('src', imgSrc);
+        $('#photo_viewer .title').html(title);
+        $('#photo_viewer .desc').html(desc);
+        
+        if (workElem.next().length > 0) {
+          $(this.nextBtnId).show();
+        } else {
+          $(this.nextBtnId).hide();
+        }
+        
+        if (workElem.prev().length > 0) {
+          $(this.prevBtnId).show();
+        } else {
+          $(this.prevBtnId).hide();
+        }
       }
     },
     
-    template: function(imgSrc) {
-      return ['<div id="photo-viewer" class="clear_fix">',
-                '<div class="image"><img src="', imgSrc, '"></div>',
-                '<div class="sidebar">',
-                  '<div class="button close">X</div>',
-                  '<div class="nav">',
-                    '<div class="button prev">prev</div>',
-                    '<div class="button next">next</div>',
+    template: function() {
+      return ['<div id="photo_viewer_outer">',
+                '<div id="photo_viewer" class="clear_fix">',
+                  '<div class="image"><img src=""></div>',
+                  '<div class="sidebar">',
+                    '<div class="button close">X</div>',
+                    '<div class="nav">',
+                      '<button class="button prev">prev</button>',
+                      '<button class="button next">next</button>',
+                    '</div>',
+                    '<div class="info">',
+                      '<div class="title"></div>',
+                      '<div class="desc"></div>',
+                    '</div>',
                   '</div>',
                 '</div>',
               '</div>'].join('');
