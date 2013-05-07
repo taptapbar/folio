@@ -10,5 +10,9 @@ class Work < ActiveRecord::Base
   validates_attachment_presence :image
   #validates_attachment_size :image, :less_than => 5.megabytes, :if => Proc.new { |imports| !imports.data.file? }
   validates_as_image :image
+  
+  def caption
+    title + "<br>" + description
+  end
 
 end

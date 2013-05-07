@@ -1,7 +1,8 @@
 <ul id="works">
   <% @works.each do |work| %>
-  <li><%= image_tag work.image.url(:large), "data-thumb" => work.image.url(:thumb),
-                                            "data-work-id" => work.id,
+  <li><%= image_tag work.image.url(:large), "data-thumb"        => work.image.url(:thumb),
+                                            "data-work-id"      => work.id,
+                                            "data-work-caption" => work.caption.html_safe,
                                             :id => "work_#{work.id}" %></li>
   <% end %>
 </ul>
@@ -17,6 +18,8 @@
     <%= image_tag @works.second.image.url(:thumb), "data-work-id" => @works.second.id %>
   </div>
 </div>
+
+<div id="work_caption"><%= @works.first.caption.html_safe %></div>
 
 <div class="pagination_container hidden">
   <%= will_paginate(@works)%>

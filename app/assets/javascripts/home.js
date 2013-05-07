@@ -18,22 +18,30 @@ jQuery(function($) {
   });
   
   
-  $(window).scroll(function() {
+  function renderNavigator() {
     var navCurrentWorkImg = $('#navigator .current-work img');
     var navPrevWorkImg    = $('#navigator .prev-work img');
     var navNextWorkImg    = $('#navigator .next-work img');
     
     var currentWorkImg  = $($("img:in-viewport")[0]);
+    var workBottomPos   = currentWorkImg.position().top + currentWorkImg.height();
+    var topThreshold    = $(window).scrollTop() + 200; // 200 is $('#navigator').position().top
+    if (workBottomPos < topThreshold) {
+      currentWorkImg = $($("img:in-viewport")[1]);
+    }
+    
     var currentWork     = currentWorkImg.parent();
     var prevWork        = currentWork.prev();
     var nextWork        = currentWork.next();
     
     // update current work image in navigator
-    var currentWorkId   = currentWorkImg.attr('data-work-id');
-    var currentThumbUrl = currentWorkImg.attr('data-thumb');
+    var currentWorkId      = currentWorkImg.attr('data-work-id');
+    var currentThumbUrl    = currentWorkImg.attr('data-thumb');
+    var currentWorkCaption = currentWorkImg.attr('data-work-caption');
     navCurrentWorkImg.attr('src', currentThumbUrl)
                      .attr('data-work-id', currentWorkId);
     
+    $('#work_caption').html(currentWorkCaption);
     
     if (prevWork.length > 0) {
       if (prevWork.attr('id') === "infscr-loading") {
@@ -67,6 +75,19 @@ jQuery(function($) {
     } else {
       navNextWorkImg.hide();
     }
+  };
+  
+  $(window).bind('scrollstart', function(e){
+    $("#navigator").fadeOut();
+    $('#work_caption').fadeOut();
+  });
+            
+  $(window).bind('scrollstop', function(e){
+    renderNavigator();
+    $("#navigator").fadeIn(200, function(){
+      var newTopPos = 200 + $("#navigator .current-work").position().top;
+      $('#work_caption').fadeIn(200).css({top: newTopPos});
+    });
   });
   
   $("#navigator div").click(function(){

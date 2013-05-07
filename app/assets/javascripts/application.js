@@ -20,6 +20,7 @@
 //= require jquery.imagesloaded
 //= require jquery.masonry
 //= require jquery.viewport
+//= require jquery.scrolling-events
 //= require app
 //= require home
 //= require works
