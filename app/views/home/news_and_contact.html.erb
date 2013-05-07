@@ -8,12 +8,8 @@
       <section id="articles_container">
         <h2>訊息 NEWS</h2>
         <div class="articles">
-          <% @articles.each do |article| %>
-          <div class="article">
-            <div class="date"><%= article.date.strftime("%-m.%-d.%Y") %></div>
-            <div class="content"><%= article.content.html_safe %></div>
-          </div>
-          <% end %>
+          <%= render :partial => "article", :collection => @articles %>
+          <%= render :partial => 'more_btn', :locals => { :items => @articles } %>
         </div>
       </section>
       

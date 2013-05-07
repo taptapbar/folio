@@ -26,3 +26,4 @@
 //= require works
 //= require pages
 //= require photo_viewer
+//= require pagination

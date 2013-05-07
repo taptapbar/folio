@@ -88,3 +88,24 @@
     }
   }
 }
+
+.pagination_container {
+  margin-bottom: 30px;
+  overflow: auto;
+
+  .pagination {    
+    .more_btn {
+      cursor: pointer;
+      background: url(/images/sprite.png) no-repeat;
+      background-position: -151px 0px;
+      width: 43px;
+      height: 43px;
+      float: right;
+
+      &:hover {
+        background-position: -151px -46px;
+        text-decoration: underline;
+      }
+    }
+}
+}

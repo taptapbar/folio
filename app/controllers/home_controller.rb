@@ -9,7 +9,16 @@ class HomeController < ApplicationController
   
   def review
     @reviews = Review.all.paginate(:per_page => 6, :page => params[:page])
-    @sidebar = Sidebar.one('Review')
+    
+    respond_to do |format|
+      
+      format.html do
+        @sidebar = Sidebar.one('Review')
+        render :review
+      end
+      
+      format.js
+    end
   end
   
   def bio
@@ -20,8 +29,17 @@ class HomeController < ApplicationController
   
   def news_and_contact
     @articles = Article.all.paginate(:per_page => 6, :page => params[:page])
-    @contact  = Page.page('contact')
-    @sidebar  = Sidebar.one('News / Contact')
+    
+    respond_to do |format|
+
+      format.html do
+        @contact  = Page.page('contact')
+        @sidebar  = Sidebar.one('News / Contact')
+        render :news_and_contact
+      end
+
+      format.js
+    end
   end
   
   def slideshow
