@@ -1,2 +1,2 @@
-$('.articles').append("<%= escape_javascript(render(:partial => 'article', :collection => @articles)) %>")
-			  .append("<%= escape_javascript(render(:partial => 'more_btn', :locals => { :items => @articles })) %>");
+$('#more_btn_block').before("<%= escape_javascript(render(:partial => 'article', :collection => @articles)) %>")
+			  .replaceWith("<%= escape_javascript(render(:partial => 'more_btn', :locals => { :items => @articles })) %>" || " ");

@@ -1,5 +1,5 @@
 <% if items.next_page %>
-  <div class="pagination_container">
+  <div class="pagination_container" id="more_btn_block">
     <%= link_to params.merge(:page => items.next_page), :class => "pagination" do %>
       <div class="more_btn"></div>
     <% end %>

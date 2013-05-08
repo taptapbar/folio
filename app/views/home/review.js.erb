@@ -1,2 +1,2 @@
-$('.reviews').append("<%= escape_javascript(render(:partial => 'review', :collection => @reviews)) %>")
-			  .append("<%= escape_javascript(render(:partial => 'more_btn', :locals => { :items => @reviews })) %>");
+$('#more_btn_block').before("<%= escape_javascript(render(:partial => 'review', :collection => @reviews)) %>")
+			  .replaceWith("<%= escape_javascript(render(:partial => 'more_btn', :locals => { :items => @reviews })) %>" || " ");
