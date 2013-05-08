@@ -1,0 +1,4 @@
+<div class="review">
+    <%= link_to review.title, review.pdf.url, :class => "title", :target => "_blank" %>
+    <div class="description"><%= review.description.html_safe %></div>
+</div>
