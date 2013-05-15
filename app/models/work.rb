@@ -12,7 +12,7 @@ class Work < ActiveRecord::Base
   validates_as_image :image
   
   def caption
-    title + "<br>" + description
+    [title, "<br>", description].join()
   end
 
 end
