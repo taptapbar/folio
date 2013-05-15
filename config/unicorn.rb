@@ -1,4 +1,4 @@
-root = "/home/bartender/folio"
+root = "/home/bartender/folio/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
