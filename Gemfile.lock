@@ -60,6 +60,8 @@ GEM
     debugger-ruby_core_source (1.2.0)
     dynamic_form (1.1.4)
     erubis (2.7.0)
+    execjs (1.4.0)
+      multi_json (~> 1.0)
     friendly_id (3.3.3.0)
       babosa (~> 0.3.0)
     highline (1.6.16)
@@ -125,6 +127,10 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     sass (3.2.7)
+    sass-rails (3.2.6)
+      railties (~> 3.2.0)
+      sass (>= 3.1.10)
+      tilt (~> 1.3)
     simple-navigation (3.10.0)
       activesupport (>= 2.3.2)
     sprockets (2.2.2)
@@ -139,6 +145,9 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.37)
+    uglifier (2.1.0)
+      execjs (>= 0.3.0)
+      multi_json (~> 1.0, >= 1.0.2)
     unicorn (4.6.2)
       kgio (~> 2.6)
       rack
@@ -164,7 +173,9 @@ DEPENDENCIES
   paperclip (~> 3.0)
   rails (= 3.2.13)
   sass
+  sass-rails (~> 3.2.3)
   simple-navigation
   state_machine
+  uglifier (>= 1.0.3)
   unicorn
   will_paginate (~> 3.0)
