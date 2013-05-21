@@ -1,4 +1,4 @@
 require 'capistrano/ext/multistage'
 
-set :stages, %w(dev production)
-set :default_stage, "dev"
+set :stages, %w(staging production)
+set :default_stage, "staging"
