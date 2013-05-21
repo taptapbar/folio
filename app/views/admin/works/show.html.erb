@@ -12,6 +12,10 @@
       <div class="data"><%= @work.title %></div>
     </div>
     <div class="row">
+      <div class="label">Year</div>
+      <div class="data"><%= @work.date.year %></div>
+    </div>
+    <div class="row">
       <div class="label">Description</div>
       <div class="data"><%= @work.description.html_safe %></div>
     </div>
