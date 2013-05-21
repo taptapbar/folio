@@ -5,6 +5,7 @@ set :rbenv_ruby_version, "1.9.2-p318"
 set :user,        "deployer"
 set :domain,      "folio.detourlab.com"
 set :application, "folio-dev"
+set :rails_env,   "staging"
 
 set :repository,  "git@github.com:taptapbar/folio.git"
 set :scm,         :git
