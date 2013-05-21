@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <div class="label"><%= f.label :date %></div>
-    <div class="input"><%= f.date_select :date, :end_year => 1970 %></div>
+    <div class="input"><%= f.date_select :date, :start_year => Time.new.year, :end_year => 1970 %></div>
   </div>
   <div class="field">
     <div class="label"><%= f.label :description %></div>
