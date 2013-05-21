@@ -28,9 +28,13 @@
       
       var workElem = $('#work_'+workId);
       this.renderWork(workElem);
+      
+      $('#navigation').addClass('photo_viewer_launched');
     },
     
     close: function() {
+      $('#navigation').removeClass('photo_viewer_launched');
+      
       $(this.wrapperId).remove();
     },
     

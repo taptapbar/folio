@@ -151,16 +151,27 @@ a img {
           text-decoration: none;
           color: #666;
         }
+        #navigation.photo_viewer_launched {
+          li a.selected {
+            border-top: 3px solid #fff;
+            border-bottom: 1px solid #fff;
+          }
+          
+          li a:hover {
+            border-top: 3px solid #fff;
+            border-bottom: 1px solid #fff;
+          }
+        }
           #navigation li a.selected {
             margin-top: -3px;
             border-top: 3px solid #000;
             border-bottom: 1px solid #aaa;
           }
-        #navigation li a:hover {
-          margin-top: -3px;
-          border-top: 3px solid #000;
-          border-bottom: 1px solid #aaa;
-        }
+          #navigation li a:hover {
+            margin-top: -3px;
+            border-top: 3px solid #000;
+            border-bottom: 1px solid #aaa;
+          }
         #navigation li:hover ul{
           display: block;
         }
@@ -207,6 +218,7 @@ a img {
     border-top: 3px solid #000;
     border-bottom: 1px solid #aaa;
   }
+
     
 #main_wrap {
   text-align: center;
