@@ -9,7 +9,7 @@
 
 <div id="navigator">
   <div class="prev-work">
-    <%= image_tag '', :class => "hidden", "data-work-id" => '' %>
+    <%= image_tag '/images/1x1.png', :class => "hidden", "data-work-id" => '' %>
   </div>
   <div class="current-work">
     <%= image_tag @works.first.image.url(:thumb), "data-work-id" => @works.first.id %>
