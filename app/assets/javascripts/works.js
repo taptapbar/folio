@@ -1,12 +1,13 @@
 $(function(){
   function Work() {
-  
+    this.currentYear = '';
   }
 
   Work.prototype = {
     template : function(work) {
       return [
         '<div id="work_', work.id, '" class="work_item" data-work-id="', work.id, '"', 
+                                                       'data-year="', work.year, '"',
                                                        'data-img-src="', work.image_url_large, '"',
                                                        'data-title="', work.title, '"',
                                                        'data-desc="', work.description, '">',
@@ -32,6 +33,25 @@ $(function(){
                                                 'id="work_', work.id, '"', ' />',
         '</li>'
       ].join('');
+    },
+    
+    renderYearLine : function(workItems) {
+      var that = this;
+      workItems.each(function(index, value) {
+        var year = $(this).attr('data-year');
+        
+        if (that.currentYear !== year) {
+          var yearLine = $('<div class="year_line">'+year+'</div>').css({top: $(this).position().top});
+          $('.year_lines').append(yearLine)
+          yearLine.fadeIn();
+          that.currentYear = year;
+        }
+      });
+    },
+    
+    renderYearLineAfterRendering : function(workItems) {
+      var that = this;
+      setTimeout(function() { that.renderYearLine(workItems); }, 1000);
     }
   }
   window.Work = new Work();
@@ -67,16 +87,21 @@ $(function(){
       var $newElems = $(newElementsHtml);
       $container.imagesLoaded(function(){
         $container.append($newElems).masonry('appended', $newElems);
+        
+        Work.renderYearLineAfterRendering($newElems);
       });
     }
   );
   
   $container.imagesLoaded(function(){
     $container.masonry({
-      // options
-      itemSelector : '.work_item',
-      columnWidth : 168
-    });
+        // options
+        itemSelector : '.work_item',
+        columnWidth : 168
+      }
+    );
+    
+    Work.renderYearLineAfterRendering($('.work_item'));
   });
   
   $('.work_item').on('click', function(){

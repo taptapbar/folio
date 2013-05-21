@@ -1,7 +1,8 @@
 <div id="works_container">
   <div class="work_items">
     <% @works.each do |work| %>
-      <div id="work_<%= work.id %>" class="work_item" data-work-id="<%= work.id %>" 
+      <div id="work_<%= work.id %>" class="work_item" data-work-id="<%= work.id %>"
+                                                      data-year="<%= work.date.year %>"
                                                       data-img-src="<%= work.image.url(:large) %>"
                                                       data-title="<%= work.title.html_safe %>"
                                                       data-desc="<%= work.description.html_safe %>">
@@ -16,6 +17,9 @@
         </div>
       </div>
     <% end %>
+  </div>
+  
+  <div class="year_lines">
   </div>
 </div>
 

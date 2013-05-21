@@ -20,6 +20,7 @@ class Work < ActiveRecord::Base
       :work => {
         id: id,
         date: date,
+        year: date.year,
         title: title,
         description: description,
         caption: caption,
