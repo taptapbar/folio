@@ -14,5 +14,19 @@ class Work < ActiveRecord::Base
   def caption
     [title, "<br>", description].join()
   end
+  
+  def as_json(options={})
+    { 
+      :work => {
+        id: id,
+        date: date,
+        title: title,
+        description: description,
+        caption: caption,
+        image_url_thumb: image.url(:thumb),
+        image_url_large: image.url(:large)
+      }
+    }
+  end
 
 end

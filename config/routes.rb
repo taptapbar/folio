@@ -1,10 +1,11 @@
 Portfolio::Application.routes.draw do
   root :to => 'home#index'
 
-  match '/work',             :to => 'home#work'
-  match '/bio',              :to => 'home#bio'
-  match '/review',           :to => 'home#review'
-  match '/news_and_contact', :to => 'home#news_and_contact'
+  match '/work',              :to => 'home#work'
+  match '/works_at_homepage', :to => 'home#works_at_homepage'
+  match '/bio',               :to => 'home#bio'
+  match '/review',            :to => 'home#review'
+  match '/news_and_contact',  :to => 'home#news_and_contact'
   
   match '/admin', :to => 'admin/home#index'
   match '/admin/login', :to => 'admin/user_sessions#new'

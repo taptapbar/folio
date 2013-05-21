@@ -1,21 +1,32 @@
 jQuery(function($) {
   $('#works').infinitescroll({
-    navSelector  : "div.pagination_container",
-    nextSelector : "div.pagination_container a:first",
-    itemSelector : "#works li",
-		debug		 	   : false,
-		dataType	 	 : 'html',
-    bufferPx     : 1000,
+      navSelector    : "div.pagination_container",
+      nextSelector   : "div.pagination_container a:first",
+      itemSelector   : "#works li",
+  		debug		 	     : true,
+  		dataType	 	   : 'json',
+      bufferPx       : 1000,
+      appendCallback : false,
 
-    loading      : {
-      img        : '/images/admin/spinner.gif',
-      finishedMsg: '',
-      msgText    : ''
+      loading      : {
+        img        : '/images/admin/spinner.gif',
+        finishedMsg: '',
+        msgText    : ''
+      },
+  		path: function(index) {
+  			return "works_at_homepage.json/?page="+index;
+  		}
     },
-		path: function(index) {
-			return "works/?page="+index;
-		}
-  });
+    function (data) {
+      var newElementsHtml = ''; 
+      for (var i=0; i < data.length; i++) {
+        var work = data[i].work;
+        newElementsHtml += Work.templateAtHomepage(work);
+      }
+      var $newElems = $(newElementsHtml);
+      $('#works').append($newElems);
+    }
+  );
   
   
   function renderNavigator() {
