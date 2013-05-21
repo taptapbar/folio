@@ -30,10 +30,11 @@ namespace :deploy do
   end
   
   desc "Symlink config files and db"
-  task :config_symlink do
+  task :symlink_config do
     run "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     # run "ln -s #{shared_path}/config/api_keys.yml #{release_path}/config/api_keys.yml"
   end
 end
 
-after "deploy:update_code", "deploy:config_symlink"
+#after "deploy:update_code", "deploy:config_symlink"
+after "deploy:finalize_update", "deploy:symlink_config"
