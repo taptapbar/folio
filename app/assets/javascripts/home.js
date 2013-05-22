@@ -33,10 +33,11 @@ jQuery(function($) {
     var navCurrentWorkImg = $('#navigator .current-work img');
     var navPrevWorkImg    = $('#navigator .prev-work img');
     var navNextWorkImg    = $('#navigator .next-work img');
+    var navCurrentWork    = $('#navigator .current-work');
     
     var currentWorkImg  = $($("img:in-viewport")[0]);
     var workBottomPos   = currentWorkImg.position().top + currentWorkImg.height();
-    var topThreshold    = $(window).scrollTop() + 200; // 200 is $('#navigator').position().top
+    var topThreshold    = navCurrentWork.offset().top; // 200 is $('#navigator').position().top
     if (workBottomPos < topThreshold) {
       currentWorkImg = $($("img:in-viewport")[1]);
     }
