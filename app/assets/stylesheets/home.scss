@@ -102,19 +102,20 @@
 
 .year_lines {
   position: absolute;
-  margin: 0 0 0 -48px;
   top: 0px;
   z-index: -1;
+  margin: 0 0 0 -48px;
   
   .year_line {
+    position: absolute;
+    top: 0px;
+    display: none;
+    
+    width: 900px;
     border-top: 3px solid #000;
     border-bottom: 1px solid #aaa;
     padding: 2px 0 10px;
-    position: absolute;
-    width: 900px;
-    top: 0px;
-    
-    display: none;
+    background-color: #e6e6e6;
   }
 }
 
