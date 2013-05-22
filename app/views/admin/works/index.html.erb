@@ -19,11 +19,13 @@
   <% else %>
     <tr>
       <th>Title</th>
+      <th>Year</th>
       <th class="actions">Actions</th>
     </tr>
     <% @works.each do |work| %>
     <tr class="data">
       <td><%= work.title %></td>
+      <td><%= work.date.year %></td>
       <td class="actions">
         <%= link_to 'View & Edit', [:admin, work] %>
         <%= link_to 'Delete', [:admin, work], :confirm => 'Are you sure?', :method => :delete %>
