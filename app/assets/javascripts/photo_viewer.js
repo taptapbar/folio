@@ -12,7 +12,9 @@
       var that = this;
       
       that.close();
-      $('body').append(that.template());
+      var viewer = $(that.template());
+      $('body').append(viewer.hide());
+      viewer.fadeIn();
       
       $(that.elemId + ' .prev').click(function(){
         that.prev();
@@ -35,7 +37,9 @@
     close: function() {
       $('#navigation').removeClass('photo_viewer_launched');
       
-      $(this.wrapperId).remove();
+      $(this.wrapperId).fadeOut(500, function() {
+        $(this).remove();
+      });
     },
     
     next: function() {
@@ -55,7 +59,7 @@
         var title            = workElem.attr('data-title');
         var desc             = workElem.attr('data-desc');
       
-        $('#photo_viewer img').attr('src', imgSrc);
+        $('#photo_viewer img').attr('src', imgSrc).hide().fadeIn();
         $('#photo_viewer .title').html(title);
         $('#photo_viewer .desc').html(desc);
         
