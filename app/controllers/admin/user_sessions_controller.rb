@@ -8,7 +8,7 @@ class Admin::UserSessionsController < AdminController
   end
 
   def create
-    @user_session = UserSession.new(params[:user_session])
+    @user_session = UserSession.new(params[:user_session], :remember_me => true)
     if @user_session.save
       redirect_to admin_url
     else
