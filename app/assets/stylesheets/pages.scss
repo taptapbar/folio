@@ -35,7 +35,8 @@
     cursor: pointer;
     width: 27px;
     height: 27px;
-    text-indent: 1000px;
+    text-indent: -1000px;
+    text-align: left;
     background: url(/images/sprite.png) no-repeat;
     
     &.english_selector {
@@ -56,7 +57,9 @@
   }
   .content {
     margin: 20px 0 0;
-    padding: 0 0 0 6px;
+    padding: 0 0 20px 6px;
+    font-size: 13px;
+    line-height: 20px;
   } 
 }
 
