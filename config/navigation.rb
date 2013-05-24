@@ -4,9 +4,9 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :home, 'Dashboard', admin_path, :if => Proc.new { in_admin? }    
     primary.item :works, 'Works', admin_works_path, :hilights_on => /admin\/works/, :if => Proc.new { in_admin? }
     primary.item :reviews, 'Reviews', admin_reviews_path, :highlights_on => /admin\/reviews/, :if => Proc.new { in_admin? }
-    primary.item :sidebars, 'Sidebars', admin_sidebars_path, :highlights_on => /admin\/sidebars/, :if => Proc.new { in_admin? }
     primary.item :articles, 'News', admin_articles_path, :highlights_on => /admin\/articles/, :if => Proc.new { in_admin? }
-    primary.item :pages, 'Pages', admin_pages_path, :highlights_on => /admin\/pages/, :if => Proc.new { in_admin? }
+    primary.item :pages, 'Bio & Contact', admin_pages_path, :highlights_on => /admin\/pages/, :if => Proc.new { in_admin? }
+    primary.item :sidebars, 'Sidebars', admin_sidebars_path, :highlights_on => /admin\/sidebars/, :if => Proc.new { in_admin? }
 
     primary.item :home, "HOME".html_safe, root_path, :if => Proc.new { !in_admin? }
     primary.item :work, "WORK".html_safe, work_path, :if => Proc.new { !in_admin? }
