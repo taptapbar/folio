@@ -34,6 +34,8 @@ jQuery(function($) {
     var navPrevWorkImg    = $('#navigator .prev-work img');
     var navNextWorkImg    = $('#navigator .next-work img');
     var navCurrentWork    = $('#navigator .current-work');
+    var navNextWork       = $('#navigator .next-work');
+    var navPrevWork       = $('#navigator .prev-work');
     
     var currentWorkImg  = $($("img:in-viewport")[0]);
     var workBottomPos   = currentWorkImg.position().top + currentWorkImg.height();
@@ -65,8 +67,9 @@ jQuery(function($) {
       navPrevWorkImg.show()
                     .attr('src', prevThumbUrl)
                     .attr('data-work-id', prevWorkId);
+      navPrevWork.show();
     } else {
-      navPrevWorkImg.hide();
+      navPrevWork.hide();
     }
     
     if (nextWork.length > 0) {
@@ -75,7 +78,7 @@ jQuery(function($) {
       }
       
       if (nextWork.length === 0) {
-        navNextWorkImg.hide();
+        navNextWork.hide();
       } else {        
         var nextWorkImg  = nextWork.find('img');
         var nextWorkId   = nextWorkImg.attr('data-work-id');
@@ -83,9 +86,10 @@ jQuery(function($) {
         navNextWorkImg.show()
                       .attr('src', nextThumbUrl)
                       .attr('data-work-id', nextWorkId);
+        navNextWork.show();
       }
     } else {
-      navNextWorkImg.hide();
+      navNextWork.hide();
     }
   };
   
