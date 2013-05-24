@@ -23,7 +23,9 @@
   </div>
 </div>
 
+<% unless @works.first.nil? %>
 <div id="work_caption"><%= @works.first.caption.html_safe %></div>
+<% end %>
 
 <div class="pagination_container hidden">
   <%= will_paginate(@works)%>
