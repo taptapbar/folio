@@ -7,7 +7,10 @@
     <div class="inner">
       <section id="reviews_container">
         <h2>評論文集檔案 REVIEWS in PDF</h2>
-        <div class="explanation">點選標題下載 Click Title to Download the File</div>
+        <div class="explanation">
+          <p>點選標題下載</p> 
+          <p>Click Title to Download the File</p>
+        </div>
         <div class="reviews">
           <%= render :partial => "review", :collection => @reviews %>
           <%= render :partial => 'more_btn', :locals => { :items => @reviews } %>
