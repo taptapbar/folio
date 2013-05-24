@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412080418) do
+ActiveRecord::Schema.define(:version => 20130524171742) do
 
   create_table "albums", :force => true do |t|
     t.string   "album_cover_title",        :default => ""
@@ -158,8 +158,9 @@ ActiveRecord::Schema.define(:version => 20130412080418) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.string   "state",              :default => "hidden"
   end
 
 end

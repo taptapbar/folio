@@ -1,4 +1,6 @@
 class Work < ActiveRecord::Base
+  acts_as_publishable
+  
   include ValidatesAsImage
   
   default_scope :order => "date DESC"

@@ -29,6 +29,7 @@
       <td class="actions">
         <%= link_to 'View & Edit', [:admin, work] %>
         <%= link_to 'Delete', [:admin, work], :confirm => 'Are you sure?', :method => :delete %>
+        <%= link_to (work.hidden? ? 'Feature' : 'Unfeature'), toggle_published_admin_work_path(work), :method => :post, :remote => true, :class => 'ajax_toggle_published' %>
       </td>
     </tr>
     <% end %>

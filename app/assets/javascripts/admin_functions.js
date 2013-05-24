@@ -24,7 +24,7 @@ $(document).ready(function() {
     //.bind("ajax:loading",  toggleLoading)
     //.bind("ajax:complete", toggleLoading)
     .bind("ajax:success", function(event, data, status, xhr) {
-      obj = jQuery.parseJSON(data);
+      obj = data;
       if(obj.status == "success") {
         $(this).text(obj.text);
       }

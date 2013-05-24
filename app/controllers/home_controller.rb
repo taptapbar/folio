@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
   def index
-    @works = Work.all.paginate(:per_page => 3, :page => params[:page])
+    @works = Work.where(:state => 'published').paginate(:per_page => 3, :page => params[:page])
   end
   
   def works_at_homepage
-    @works = Work.all.paginate(:per_page => 3, :page => params[:page])
+    @works = Work.where(:state => 'published').paginate(:per_page => 3, :page => params[:page])
     
     respond_to do |format|
       format.json { render :json => @works }

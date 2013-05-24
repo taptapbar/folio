@@ -80,4 +80,12 @@ class Admin::WorksController < AdminController
       format.xml  { head :ok }
     end
   end
+  
+  def toggle_published
+    @work = Work.find(params[:id])
+    @work.toggle_published
+    respond_to do |format|
+      format.json { render :json => { :status => 'success', :text => (@work.hidden? ? 'Feature' : 'Unfeature') } }
+    end
+  end
 end
