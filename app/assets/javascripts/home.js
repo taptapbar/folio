@@ -79,6 +79,7 @@ jQuery(function($) {
       
       if (nextWork.length === 0) {
         navNextWork.hide();
+        navCurrentWork.addClass('last');
       } else {        
         var nextWorkImg  = nextWork.find('img');
         var nextWorkId   = nextWorkImg.attr('data-work-id');
@@ -87,9 +88,11 @@ jQuery(function($) {
                       .attr('src', nextThumbUrl)
                       .attr('data-work-id', nextWorkId);
         navNextWork.show();
+        navCurrentWork.removeClass('last');
       }
     } else {
       navNextWork.hide();
+      navCurrentWork.addClass('last');
     }
   };
   
