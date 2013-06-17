@@ -10,6 +10,18 @@
     width: 534px;
   }
   
+  a {
+    display: inline-block;
+    padding: 0 0 1px 0;
+    text-decoration: none;
+    border-bottom: dashed 1px #333;
+    
+    &:hover {
+      text-decoration: none;
+      border-bottom: solid 1px #333;
+    }
+  }
+  
   h2 {
     font-size: 19px;
     font-weight: lighter;

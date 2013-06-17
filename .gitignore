@@ -10,3 +10,4 @@ public/system/*
 .DS_Store
 data/
 .sass-cache/
+.powrc

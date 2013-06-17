@@ -11,16 +11,20 @@
 }
 
 .rich_text a {
-  color: #7AA821;
+  display: inline-block;
+  color: #333;
+  padding: 0 0 2px 0;
   text-decoration: none;
+  border-bottom: dashed 1px #333;
 }
 
 .rich_text a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: solid 1px #333;
 }
 
 .rich_text a:visited {
-  color: #4C6916;
+  color: #333;
 }
 
 .rich_text ul {
