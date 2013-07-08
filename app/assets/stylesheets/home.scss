@@ -137,7 +137,9 @@
   margin-bottom: 30px;
   overflow: auto;
 
-  .pagination {    
+  .pagination {
+    text-decoration: none;
+      
     .more_btn {
       cursor: pointer;
       background: url(/images/sprite.png) no-repeat;
