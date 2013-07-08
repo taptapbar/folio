@@ -140,6 +140,11 @@
   .pagination {
     text-decoration: none;
     border: none;
+    
+    &:hover {
+      text-decoration: none;
+      border: none;
+    }
       
     .more_btn {
       cursor: pointer;
@@ -151,7 +156,7 @@
 
       &:hover {
         background-position: -151px -46px;
-        text-decoration: underline;
+        text-decoration: none;
       }
     }
 }
