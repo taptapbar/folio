@@ -58,12 +58,7 @@ $(function(){
 });
 
 $(function(){
-  var $container = $('.work_items').masonry({
-    itemSelector : '.work_item',
-    columnWidth : 168,
-    hiddenStyle : { opacity: 0, scale: 1 },
-    visibleStyle : { opacity: 1, transform: 'scale(1)' }
-  });
+  var $container = $('.work_items');
   
   $container.infinitescroll({
       navSelector    : "div.pagination_container",
@@ -105,7 +100,13 @@ $(function(){
   
   $container.imagesLoaded().done( function( instance ) {
     console.log('all images successfully loaded');
-    $container.masonry().fadeIn(200, function(){
+    $container.masonry({
+      itemSelector : '.work_item',
+      columnWidth : 168,
+      isFitWidth: true,
+      hiddenStyle : { opacity: 0, scale: 1 },
+      visibleStyle : { opacity: 1, transform: 'scale(1)' }
+    }).fadeIn(200, function(){
       Work.renderYearLine($('.work_item'));
     });
   });
