@@ -60,16 +60,27 @@ $(function(){
 $(function(){
   var $container = $('.work_items');
   
+  $container.imagesLoaded().done( function( instance ) {
+    console.log('all images successfully loaded');
+    $container.masonry({
+      itemSelector : '.work_item',
+      columnWidth : 168,
+      isFitWidth : true,
+      hiddenStyle : { opacity: 0, scale: 1 },
+      visibleStyle : { opacity: 1, transform: 'scale(1)' }
+    }).fadeIn(200, function(){
+      Work.renderYearLine($('.work_item'));
+    });
+  });
+  
   $container.infinitescroll({
       navSelector    : "div.pagination_container",
       nextSelector   : "div.pagination_container a:first",
       itemSelector   : ".work_item",
   		debug		 	     : false,
-  		dataType	 	   : 'json',
-      bufferPx       : 300,
+      dataType	 	   : 'json',
       appendCallback : false,
       prefill        : true,
-
       loading      : {
         img        : '/images/admin/spinner.gif',
         finishedMsg: '',
@@ -90,26 +101,13 @@ $(function(){
       $container.imagesLoaded().done(function( instance ) {
         console.log('all images successfully loaded after ajax');
         setTimeout(function() { 
-          $container.append($newElems).masonry('appended', $newElems).fadeIn(200, function(){
+          $container.masonry().append($newElems).masonry('appended', $newElems).fadeIn(200, function(){
             Work.renderYearLine($newElems);
           });
         }, 300);
       });
     }
   );
-  
-  $container.imagesLoaded().done( function( instance ) {
-    console.log('all images successfully loaded');
-    $container.masonry({
-      itemSelector : '.work_item',
-      columnWidth : 168,
-      isFitWidth: true,
-      hiddenStyle : { opacity: 0, scale: 1 },
-      visibleStyle : { opacity: 1, transform: 'scale(1)' }
-    }).fadeIn(200, function(){
-      Work.renderYearLine($('.work_item'));
-    });
-  });
   
   $('.work_item').on('click', function(){
     PhotoViewer.launch($(this).attr('data-work-id'));
