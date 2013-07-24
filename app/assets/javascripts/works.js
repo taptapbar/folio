@@ -92,15 +92,19 @@ $(function(){
       }
       
       var $newElems = $(newElementsHtml);
-      $container.imagesLoaded(function(){
-        $container.append($newElems).masonry('appended', $newElems).fadeIn(200, function(){
-          Work.renderYearLine($newElems);
-        });
+      $container.imagesLoaded().done(function( instance ) {
+        console.log('all images successfully loaded after ajax');
+        setTimeout(function() { 
+          $container.append($newElems).masonry('appended', $newElems).fadeIn(200, function(){
+            Work.renderYearLine($newElems);
+          });
+        }, 300);
       });
     }
   );
   
-  $container.imagesLoaded(function(){
+  $container.imagesLoaded().done( function( instance ) {
+    console.log('all images successfully loaded');
     $container.masonry().fadeIn(200, function(){
       Work.renderYearLine($('.work_item'));
     });

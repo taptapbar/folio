@@ -17,7 +17,7 @@
 //= require jquery.orbit
 //= require jquery.jtruncate
 //= require jquery.infinitescroll
-//= require jquery.imagesloaded
+//= require imagesloaded
 //= require masonry
 //= require jquery.viewport
 //= require jquery.scrolling-events
