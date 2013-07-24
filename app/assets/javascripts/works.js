@@ -68,7 +68,7 @@ $(function(){
       isFitWidth : true,
       hiddenStyle : { opacity: 0, scale: 1 },
       visibleStyle : { opacity: 1, transform: 'scale(1)' }
-    }).fadeIn(200, function(){
+    }).masonry('on', 'layoutComplete', function(msnryInstance, laidOutItems) {
       Work.renderYearLine($('.work_item'));
     });
   });
@@ -100,11 +100,12 @@ $(function(){
       var $newElems = $(newElementsHtml);
       $container.imagesLoaded().done(function( instance ) {
         console.log('all images successfully loaded after ajax');
-        setTimeout(function() { 
-          $container.masonry().append($newElems).masonry('appended', $newElems).fadeIn(200, function(){
-            Work.renderYearLine($newElems);
-          });
-        }, 300);
+        //setTimeout(function() { 
+          $container.masonry().append($newElems).masonry('appended', $newElems)
+            .masonry('on', 'layoutComplete', function(msnryInstance, laidOutItems) {
+              Work.renderYearLine($newElems);
+            });
+        //}, 300);
       });
     }
   );
