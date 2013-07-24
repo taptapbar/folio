@@ -18,7 +18,7 @@
 //= require jquery.jtruncate
 //= require jquery.infinitescroll
 //= require jquery.imagesloaded
-//= require jquery.masonry
+//= require masonry
 //= require jquery.viewport
 //= require jquery.scrolling-events
 //= require app

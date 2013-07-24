@@ -87,9 +87,9 @@ $(function(){
       
       var $newElems = $(newElementsHtml);
       $container.imagesLoaded(function(){
-        $container.append($newElems).masonry('appended', $newElems);
-        
-        Work.renderYearLineAfterRendering($newElems);
+        $container.append($newElems).masonry('appended', $newElems).fadeIn(200, function(){
+          Work.renderYearLine($newElems);
+        });
       });
     }
   );
@@ -98,11 +98,13 @@ $(function(){
     $container.masonry({
         // options
         itemSelector : '.work_item',
-        columnWidth : 168
+        columnWidth : 168,
+        hiddenStyle : { opacity: 0, scale: 1 },
+        visibleStyle : { opacity: 1, transform: 'scale(1)' }
       }
-    );
-    
-    Work.renderYearLineAfterRendering($('.work_item'));
+    ).fadeIn(200, function(){
+      Work.renderYearLine($('.work_item'));
+    });
   });
   
   $('.work_item').on('click', function(){
