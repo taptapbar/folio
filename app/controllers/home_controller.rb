@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   end
   
   def work
-    @works = Work.all.paginate(:per_page => 20, :page => params[:page])
+    @works = Work.all.paginate(:per_page => WORK_PER_PAGE, :page => params[:page])
   end
   
   def review

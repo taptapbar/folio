@@ -65,8 +65,9 @@ $(function(){
       itemSelector   : ".work_item",
   		debug		 	     : false,
   		dataType	 	   : 'json',
-      bufferPx       : 1000,
+      bufferPx       : 300,
       appendCallback : false,
+      prefill        : true,
 
       loading      : {
         img        : '/images/admin/spinner.gif',
