@@ -40,7 +40,7 @@ $(function(){
       workItems.each(function(index, value) {
         var year = $(this).attr('data-year');
         
-        if (that.currentYear !== year) {
+        if (that.currentYear !== year && parseInt(that.currentYear) > parseInt(year)) {
           var yearLine = $('<div class="year_line">'+year+'</div>').css({top: $(this).position().top});
           $('.year_lines').append(yearLine);
           yearLine.fadeIn();
