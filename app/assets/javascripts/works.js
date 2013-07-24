@@ -82,6 +82,7 @@ $(function(){
       dataType	 	   : 'json',
       appendCallback : false,
       prefill        : true,
+      bufferPx       : 200,
       loading      : {
         img        : '/images/admin/spinner.gif',
         finishedMsg: '',
