@@ -100,12 +100,18 @@ $(function(){
       var $newElems = $(newElementsHtml);
       $container.imagesLoaded().done(function( instance ) {
         console.log('all images successfully loaded after ajax');
-        //setTimeout(function() { 
-          $container.masonry().append($newElems).masonry('appended', $newElems)
+        setTimeout(function() { 
+          $container.masonry({
+              itemSelector : '.work_item',
+              columnWidth : 168,
+              isFitWidth : true,
+              hiddenStyle : { opacity: 0, scale: 1 },
+              visibleStyle : { opacity: 1, transform: 'scale(1)' }
+            }).append($newElems).masonry('appended', $newElems)
             .masonry('on', 'layoutComplete', function(msnryInstance, laidOutItems) {
               Work.renderYearLine($newElems);
             });
-        //}, 300);
+        }, 300);
       });
     }
   );
