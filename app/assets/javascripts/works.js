@@ -42,7 +42,7 @@ $(function(){
         
         if (that.currentYear !== year) {
           var yearLine = $('<div class="year_line">'+year+'</div>').css({top: $(this).position().top});
-          $('.year_lines').append(yearLine)
+          $('.year_lines').append(yearLine);
           yearLine.fadeIn();
           that.currentYear = year;
         }
@@ -51,7 +51,7 @@ $(function(){
     
     renderYearLineAfterRendering : function(workItems) {
       var that = this;
-      setTimeout(function() { that.renderYearLine(workItems); }, 1000);
+      setTimeout(function() { that.renderYearLine(workItems); }, 500);
     }
   }
   window.Work = new Work();
@@ -61,7 +61,6 @@ $(function(){
   var $container = $('.work_items');
   
   $container.imagesLoaded().done( function( instance ) {
-    console.log('all images successfully loaded');
     $container.masonry({
       itemSelector : '.work_item',
       columnWidth : 168,
@@ -69,7 +68,7 @@ $(function(){
       hiddenStyle : { opacity: 0, scale: 1 },
       visibleStyle : { opacity: 1, transform: 'scale(1)' }
     }).masonry('on', 'layoutComplete', function(msnryInstance, laidOutItems) {
-      Work.renderYearLine($('.work_item'));
+      Work.renderYearLineAfterRendering($('.work_item'));
     });
   });
   
@@ -99,19 +98,16 @@ $(function(){
       
       var $newElems = $(newElementsHtml);
       $container.imagesLoaded().done(function( instance ) {
-        console.log('all images successfully loaded after ajax');
-        setTimeout(function() { 
-          $container.masonry({
-              itemSelector : '.work_item',
-              columnWidth : 168,
-              isFitWidth : true,
-              hiddenStyle : { opacity: 0, scale: 1 },
-              visibleStyle : { opacity: 1, transform: 'scale(1)' }
-            }).append($newElems).masonry('appended', $newElems)
-            .masonry('on', 'layoutComplete', function(msnryInstance, laidOutItems) {
-              Work.renderYearLine($newElems);
-            });
-        }, 300);
+        $container.masonry({
+            itemSelector : '.work_item',
+            columnWidth : 168,
+            isFitWidth : true,
+            hiddenStyle : { opacity: 0, scale: 1 },
+            visibleStyle : { opacity: 1, transform: 'scale(1)' }
+          }).append($newElems).masonry('appended', $newElems)
+          .masonry('on', 'layoutComplete', function(msnryInstance, laidOutItems) {
+            Work.renderYearLineAfterRendering($newElems);
+          });
       });
     }
   );
