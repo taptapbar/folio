@@ -1,6 +1,8 @@
 $(function(){
   function Work() {
-    this.currentYear = '';
+    var currentTime = new Date();
+    var nextYear    = currentTime.getFullYear() + 1;
+    this.currentYear = nextYear.toString();
   }
 
   Work.prototype = {
@@ -51,7 +53,7 @@ $(function(){
     
     renderYearLineAfterRendering : function(workItems) {
       var that = this;
-      setTimeout(function() { that.renderYearLine(workItems); }, 500);
+      setTimeout(function() { that.renderYearLine(workItems); }, 300);
     }
   }
   window.Work = new Work();
