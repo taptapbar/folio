@@ -67,6 +67,7 @@ $(function(){
       itemSelector : '.work_item',
       columnWidth : 168,
       isFitWidth : true,
+      isAnimated : false,
       hiddenStyle : { opacity: 0, scale: 1 },
       visibleStyle : { opacity: 1, transform: 'scale(1)' }
     }).masonry('on', 'layoutComplete', function(msnryInstance, laidOutItems) {
@@ -105,6 +106,7 @@ $(function(){
             itemSelector : '.work_item',
             columnWidth : 168,
             isFitWidth : true,
+            isAnimated : false,
             hiddenStyle : { opacity: 0, scale: 1 },
             visibleStyle : { opacity: 1, transform: 'scale(1)' }
           }).append($newElems).masonry('appended', $newElems)
