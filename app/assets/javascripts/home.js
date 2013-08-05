@@ -102,11 +102,13 @@ jQuery(function($) {
   });
             
   $(window).bind('scrollstop', function(e){
-    renderNavigator();
-    $("#navigator").fadeIn(200, function(){
-      var newTopPos = 200 + $("#navigator .current-work").position().top;
-      $('#work_caption').fadeIn(200).css({top: newTopPos});
-    });
+    if ($('#works').length > 0) {
+      renderNavigator();
+      $("#navigator").fadeIn(200, function(){
+        var newTopPos = 200 + $("#navigator .current-work").position().top;
+        $('#work_caption').fadeIn(200).css({top: newTopPos});
+      });
+    }
   });
   
   $("#navigator div").click(function(){

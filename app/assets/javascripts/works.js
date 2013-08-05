@@ -105,9 +105,11 @@ $(function(){
       }
       var $newElems = $(newElementsHtml);
       
-      $newElems.imagesLoaded().done(function(instance) {
-        $container.append($newElems).masonry('appended', $newElems).masonry();
-      });
+      if ($newElems.length > 0) {
+        $newElems.imagesLoaded().done(function(instance) {
+          $container.append($newElems).masonry('appended', $newElems).masonry();
+        });
+      }
     }
   );
   
