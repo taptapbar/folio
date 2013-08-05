@@ -61,18 +61,22 @@ $(function(){
 
 $(function(){
   var $container = $('.work_items');
+  var setting = {
+    itemSelector : '.work_item',
+    columnWidth : 168,
+    isFitWidth : true,
+    hiddenStyle : { opacity: 0, scale: 1 },
+    visibleStyle : { opacity: 1, transform: 'scale(1)' }
+  };
   
-  $container.imagesLoaded().done( function( instance ) {
-    $container.masonry({
-      itemSelector : '.work_item',
-      columnWidth : 168,
-      isFitWidth : true,
-      isAnimated : false,
-      hiddenStyle : { opacity: 0, scale: 1 },
-      visibleStyle : { opacity: 1, transform: 'scale(1)' }
-    }).masonry('on', 'layoutComplete', function(msnryInstance, laidOutItems) {
-      Work.renderYearLineAfterRendering($('.work_item'));
-    });
+  $container.masonry(setting);
+  $container.masonry('on', 'layoutComplete', function(msnryInstance, laidOutItems) {
+    //console.log("layoutComplete");
+    Work.renderYearLine($('.work_item'));
+  });
+  
+  $container.imagesLoaded().done( function(instance) {
+    $container.masonry();
   });
   
   $container.infinitescroll({
@@ -99,20 +103,10 @@ $(function(){
         var work = data[i].work;
         newElementsHtml += Work.template(work);
       }
-      
       var $newElems = $(newElementsHtml);
-      $container.imagesLoaded().done(function( instance ) {
-        $container.masonry({
-            itemSelector : '.work_item',
-            columnWidth : 168,
-            isFitWidth : true,
-            isAnimated : false,
-            hiddenStyle : { opacity: 0, scale: 1 },
-            visibleStyle : { opacity: 1, transform: 'scale(1)' }
-          }).append($newElems).masonry('appended', $newElems)
-          .masonry('on', 'layoutComplete', function(msnryInstance, laidOutItems) {
-            Work.renderYearLineAfterRendering($newElems);
-          });
+      
+      $newElems.imagesLoaded().done(function(instance) {
+        $container.append($newElems).masonry('appended', $newElems).masonry();
       });
     }
   );
