@@ -43,7 +43,17 @@ $(function(){
         var year = $(this).attr('data-year');
         
         if (that.currentYear !== year && parseInt(that.currentYear) > parseInt(year)) {
-          var yearLine = $('<div class="year_line">'+year+'</div>').css({top: $(this).position().top});
+          var topOfNewYearLine = $(this).position().top;
+          
+          var lastYearLine = $('.year_line').last();
+          if (lastYearLine.length > 0) {
+            var bottomOfLastYearLine = lastYearLine.position().top + 33;
+            if ($(this).position().top < bottomOfLastYearLine) {
+              topOfNewYearLine = bottomOfLastYearLine;
+            }
+          }
+          
+          var yearLine = $('<div class="year_line">'+year+'</div>').css({top: topOfNewYearLine});
           $('.year_lines').append(yearLine);
           yearLine.fadeIn();
           that.currentYear = year;
