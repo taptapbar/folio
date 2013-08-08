@@ -12,7 +12,7 @@ $(function(){
                                                        'data-year="', work.year, '"',
                                                        'data-img-src="', work.image_url_large, '"',
                                                        'data-title="', work.title, '"',
-                                                       'data-desc="', work.year, '">',
+                                                       'data-desc="', work.description, '">',
           '<div class="image">',
             '<img src="', work.image_url_thumb, '"/>',
             '<div class="hover_cover">',
@@ -113,7 +113,7 @@ $(function(){
     }
   );
   
-  $('.work_item').on('click', function(){
+  $(document).on('click', '.work_item', function(){
     PhotoViewer.launch($(this).attr('data-work-id'));
   });
 });

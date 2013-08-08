@@ -5,7 +5,7 @@
                                                       data-year="<%= work.date.year %>"
                                                       data-img-src="<%= work.image.url(:large) %>"
                                                       data-title="<%= work.title.html_safe %>"
-                                                      data-desc="<%= work.date.year %>">
+                                                      data-desc="<%= work.description.html_safe %>">
         <div class="image">
           <%= image_tag work.image.url(:thumb) %>
           <div class="hover_cover">
