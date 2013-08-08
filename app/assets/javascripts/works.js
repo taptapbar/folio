@@ -70,6 +70,8 @@ $(function(){
 });
 
 $(function(){
+  var isImagesLoaded = false;
+  
   var $container = $('.work_items');
   var setting = {
     itemSelector : '.work_item',
@@ -81,11 +83,13 @@ $(function(){
   
   $container.masonry(setting);
   $container.masonry('on', 'layoutComplete', function(msnryInstance, laidOutItems) {
-    //console.log("layoutComplete");
-    Work.renderYearLine($('.work_item'));
+    if (isImagesLoaded == true) {
+      Work.renderYearLine($('.work_item'));
+    }
   });
   
   $container.imagesLoaded().done( function(instance) {
+    isImagesLoaded = true;
     $container.masonry();
   });
   
