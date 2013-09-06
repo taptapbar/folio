@@ -58,8 +58,18 @@
         var imgSrc           = workElem.attr('data-img-src');
         var title            = workElem.attr('data-title');
         var desc             = workElem.attr('data-desc');
-      
-        $('#photo_viewer img').attr('src', imgSrc).hide().fadeIn();
+        
+        var image = $('#photo_viewer img');
+        image.attr('src', imgSrc);
+        
+        image.imagesLoaded( function() {        
+          $('#photo_viewer').css('height', '80%');
+          if (image.height() < image.width()) {
+            $('#photo_viewer').css('height', image.height() + 'px');
+          }
+          image.hide().fadeIn();
+        });
+
         $('#photo_viewer .title').html(title);
         $('#photo_viewer .desc').html(desc);
         

@@ -32,7 +32,7 @@ gem 'jquery-ui-rails'
 gem 'capistrano-rbenv'
 
 group :development, :test, :cucumber do
-  gem 'debugger'
+  #gem 'debugger'
 end
 
 # Gems used only for assets and not required
